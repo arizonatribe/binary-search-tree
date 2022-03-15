@@ -5,7 +5,7 @@ An implementation of a binary search tree API in JavaScript
 # Install
 
 ```
-npm install @arizonatribe/binary-search-tree
+npm install @vanillas/binary-search-tree
 ```
 
 # Usage
@@ -14,7 +14,7 @@ Create the root node and insert several child nodes:
 
 ```javascript
 
-const createNode = require("@arizonatribe/binary-search-tree")
+const createNode = require("@vanillas/binary-search-tree")
 
 const rootNode = createNode(100)
 
