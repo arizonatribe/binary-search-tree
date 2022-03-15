@@ -1,0 +1,17 @@
+{
+  "name": "@arizonatribe/binary-search-tree",
+  "version": "1.0.0",
+  "description": "An implementation of a binary search tree API in JavaScript",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+      "bst",
+      "binary search tree",
+      "search tree",
+      "algorithms"
+  ],
+  "author": "David Nunez <arizonatribe@gmail.com>",
+  "license": "MIT"
+}
