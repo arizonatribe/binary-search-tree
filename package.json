@@ -2,8 +2,9 @@
   "name": "@vanillas/binary-search-tree",
   "version": "1.0.0",
   "description": "An implementation of a binary search tree API in JavaScript",
-  "main": "lib/indevanillas.js",
+  "main": "lib/index.js",
   "scripts": {
+    "prepare": "npm run test",
     "test": "tape test/index.test.js | faucet"
   },
   "keywords": [
