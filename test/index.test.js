@@ -33,6 +33,18 @@ test("Should list the hierarchical layering of nodes", assert => {
     assert.end()
 })
 
+test("Should print the hierarchical layering of nodes", assert => {
+    const rootNode = createTestNode()
+
+    assert.deepEquals(
+        rootNode.print(),
+        "",
+        "Print the hierarchy"
+    )
+
+    assert.end()
+})
+
 test("Should find grandchild node from 3-layer binary search tree", assert => {
     const rootNode = createTestNode()
 
