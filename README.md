@@ -132,3 +132,20 @@ rootNode.toList()
 //   [40]
 // ]
 ```
+
+# TypeScript support
+
+Also works with TypeScript:
+
+```typescript
+import { createNode } from "@vanillas/binary-search-tree"
+
+const rootNode = createNode(100)
+    .insert(20, n20 => n20
+        .insert(10)
+        .insert(30, n30 => n30.insert(40))
+    )
+    .insert(500)
+
+const result = rootNode.search(40)
+```
