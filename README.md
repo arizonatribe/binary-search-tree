@@ -81,6 +81,19 @@ rootNode.search(20)
 // }
 ```
 
+This achieves a hierarchically layered tree which looks like this:
+
+```javascript
+rootNode.toList()
+
+// [
+//   [100],
+//   [20, 500],
+//   [10, 30],
+//   [40]
+// ]
+```
+
 Alternatively, you can utilize the optional 2nd param to the `.insert()` method to chain onto that new node you're inserting:
 
 ```javascript
@@ -92,4 +105,30 @@ const rootNode = createNode(100)
       .insert(30, n30 => n30.insert(40))
   )
   .insert(500)
+```
+
+And while you _can_ add nodes directly to the exact locations you want them, you can also allow them to be placed automatically.
+
+
+```javascript
+const rootNode = createNode(100)
+    .insert(20)
+    .insert(500)
+    .insert(10)
+    .insert(30)
+    .insert(40)
+```
+
+Which achieves the same layering as the other two (manual) examples listed earlier:
+
+
+```javascript
+rootNode.toList()
+
+// [
+//   [100],
+//   [20, 500],
+//   [10, 30],
+//   [40]
+// ]
 ```

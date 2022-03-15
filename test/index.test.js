@@ -121,3 +121,28 @@ test("Should allow the 2nd arg to .insert() to be used on a newly inserted node"
 
     assert.end()
 })
+
+test("Should be capable of automatically handling placement of nodes", assert => {
+    const rootNode = createNode(100)
+        .insert(20)
+        .insert(500)
+        .insert(10)
+        .insert(30)
+        .insert(40)
+
+    assert.deepEquals(
+        rootNode.toList(),
+        [[100], [20, 500], [10, 30], [40]],
+        "Root -> Child -> Grandchild"
+    )
+
+    let result = rootNode.search(40) || {}
+
+    assert.equals(
+        result.value,
+        40,
+        "Result matches the grandchild node value (40)"
+    )
+
+    assert.end()
+})
