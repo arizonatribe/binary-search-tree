@@ -1,6 +1,6 @@
 {
   "name": "@vanillas/binary-search-tree",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An implementation of a binary search tree API in JavaScript",
   "main": "lib/index.js",
   "scripts": {
@@ -15,6 +15,12 @@
   ],
   "author": "David Nunez <arizonatribe@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arizonatribe/binary-search-tree.git"
+  },
+  "bugs": "https://github.com/arizonatribe/binary-search-tree/issues",
+  "homepage": "https://github.com/arizonatribe/binary-search-tree#readme",
   "devDependencies": {
     "faucet": "^0.0.1",
     "tape": "^5.5.2"
