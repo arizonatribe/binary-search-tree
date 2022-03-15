@@ -10,6 +10,18 @@ npm install @vanillas/binary-search-tree
 
 # Usage
 
+Given a tree strucutre which looks like this:
+
+```
+  100
+  / \
+ 20 500
+ / \
+10 30
+    \
+    40
+```
+
 Create the root node and insert several child nodes:
 
 ```javascript
@@ -67,4 +79,17 @@ rootNode.search(20)
 //     search: [Function: search]
 //   }
 // }
+```
+
+Alternatively, you can utilize the optional 2nd param to the `.insert()` method to chain onto that new node you're inserting:
+
+```javascript
+const createNode = require("@vanillas/binary-search-tree")
+
+const rootNode = createNode(100)
+  .insert(20, n20 => n20
+      .insert(10)
+      .insert(30, n30 => n30.insert(40))
+  )
+  .insert(500)
 ```

@@ -90,3 +90,34 @@ test("Should find child node from 3-layer binary search tree", assert => {
 
     assert.end()
 })
+
+test("Should allow the 2nd arg to .insert() to be used on a newly inserted node", assert => {
+    try {
+        const rootNode = createNode(100)
+          .insert(500)
+          .insert(20, n20 => n20
+              .insert(10)
+              .insert(30, n30 => n30.insert(40))
+          )
+
+        let result = rootNode.search(20) || {}
+
+        assert.equals(
+            result.value,
+            20,
+            "Result matches the child node value (20)"
+        )
+
+        result = rootNode.search(40) || {}
+
+        assert.equals(
+            result.value,
+            40,
+            "Result matches the grandchild node value (40)"
+        )
+    } catch (err) {
+        assert.fail(err)
+    }
+
+    assert.end()
+})
