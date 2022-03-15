@@ -1,7 +1,7 @@
 const test = require("tape")
 const createNode = require("../lib")
 
-test("Three node layer binary search tree", assert => {
+function createTestNode() {
     const rootNode = createNode(100)
 
     rootNode
@@ -17,6 +17,24 @@ test("Three node layer binary search tree", assert => {
       .left
       .right
       .insert(40)
+
+    return rootNode
+}
+
+test("Should list the hierarchical layering of nodes", assert => {
+    const rootNode = createTestNode()
+
+    assert.deepEquals(
+        rootNode.toList(),
+        [[100], [20, 500], [10, 30], [40]],
+        "Root -> Child -> Grandchild"
+    )
+
+    assert.end()
+})
+
+test("Should find grandchild node from 3-layer binary search tree", assert => {
+    const rootNode = createTestNode()
 
     const grandchild = rootNode.search(40)
 
@@ -35,6 +53,12 @@ test("Three node layer binary search tree", assert => {
         undefined,
         "No right child"
     )
+
+    assert.end()
+})
+
+test("Should find child node from 3-layer binary search tree", assert => {
+    const rootNode = createTestNode()
 
     const child = rootNode.search(20)
 
